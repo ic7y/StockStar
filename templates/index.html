@@ -1,0 +1,390 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!--- Basic Page Needs  -->
+    <meta charset="utf-8">
+    <title>StockStar</title>
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <meta name="keywords" content="">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- Mobile Specific Meta  -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <!-- CSS -->
+    <link rel="stylesheet" href="/static/bootstrap template/Martence/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/static/bootstrap template/Martence/css/jquery-ui.css">
+    <link rel="stylesheet" href="/static/bootstrap template/Martence/css/fontawesome-all.min.css">
+    <link rel="stylesheet" href="/static/bootstrap template/Martence/css/flaticon.css">
+    <link rel="stylesheet" href="/static/bootstrap template/Martence/css/owl.carousel.min.css">
+    <link rel="stylesheet" href="/static/bootstrap template/Martence/css/animate.css">
+    <link rel="stylesheet" href="/static/bootstrap template/Martence/css/jquery.fancybox.min.css">
+    <link rel="stylesheet" href="/static/bootstrap template/Martence/css/magnific-popup.css">
+    <link rel="stylesheet" href="/static/bootstrap template/Martence/css/slicknav.min.css">
+    <link rel="stylesheet" href="/static/bootstrap template/Martence/css/style.css">
+    <link rel="stylesheet" href="/static/bootstrap template/Martence/css/responsive.css">
+    <!-- Favicon -->
+    <link rel="shortcut icon" type="image/png" href="/static/bootstrap template/Martence/img/favicon.ico">
+
+
+</head>
+
+<body>
+
+
+    <div id="preloader"></div>
+    <!-- header-start -->
+    <header>
+
+        <div class="header-bottom-area">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-2 col-md-4 col-sm-8 col-8">
+                        <div class="logo row">
+                            <a href="/StockStar/index"><img src="/static/bootstrap template/Martence/img/home1/logo.png"  alt=""></a>
+                            <a href="/StockStar/index" style="font-size: 26px;color: white;font-family: 'Century Gothic',sans-serif">StockStar</a>
+                        </div>
+                    </div>
+                    <div class="col-lg-7 col-md-8 col-sm-12 col-12">
+                        <div class="responsive-menu d-lg-none"></div>
+                        <div class="menu d-none d-lg-block">
+                            <nav>
+                                <ul id="menu">
+
+                                    <li><a href="04_about.html">关于我们</a></li>
+
+                                    <li><a href="07_two-column-grid.html">服务</a><span class="icon"><i class="fas fa-angle-down"></i></span>
+                                        <ul class="drop">
+                                            <li><a href="/StockStar/index">宏观监控</a></li>
+                                            <li><a href="08_three-column-grid.html">自定义监控</a></li>
+                                        </ul>
+                                    </li>
+                                    <li><a href="/StockStar/forum">论坛</a></li>
+                                </ul>
+                            </nav>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-sm-12 col-12">
+                        <div class="search-quote">
+
+                            {% if current_user %}
+                            <div class="sq-quote">
+                                <a  class="link martence-button" href="/StockStar/personal_page/{{current_user.login_name}}">{{current_user.login_name}}</a>
+                            </div>
+
+                            <div class="sq-quote">
+                                <a class="link martence-button active" href="/StockStar/logout">退出</a>
+                            </div>
+
+                            {% else %}
+                            <div class="sq-quote">
+                                <a class="link martence-button" href="/StockStar/login">Sign up / in</a>
+                            </div>
+                            {% endif %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- header-end -->
+    <!-- slider-area-start -->
+    <div class="slider-area owl-carousel">
+        <div class="single-slider bg-with-black">
+            <div class="img">
+                <img src="/static/bootstrap template/Martence/img/home1/slider-1.jpg" alt="">
+            </div>
+            <div class="content">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-10 col-12">
+                            <h3 class="intro animated">We Provide Perspectives</h3>
+                            <h2 class="title d-none d-md-block animated">For Stock Market</h2>
+
+                            <div class="buttons animated">
+                                <a class="link martence-button active" href="#">关于我们</a>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="single-slider bg-with-black">
+            <div class="img">
+                <img src="/static/bootstrap template/Martence/img/home1/slider-2.jpg" alt="">
+            </div>
+            <div class="content">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-10 col-12">
+                            <h3 class="intro animated">We Provide Perspectives</h3>
+                            <h2 class="title d-none d-md-block animated">For Stock Market</h2>
+
+                            <div class="buttons animated">
+                                <a class="link martence-button active" href="#">关于我们</a>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- slider-area-end -->
+
+
+
+
+    <div class="pricing-area">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6 offset-lg-3 col-md-8 offset-md-2 col-sm-10 offset-sm-1 col-12">
+                    <div class="section-title">
+                        <h2 class="title">指数监控</h2>
+                    </div>
+                </div>
+            </div>
+            <div class="row justify-content-center">
+                <div class="col-lg-6 col-md-6 col-sm-6 col-12">
+                    <div class="single-pricing" >
+                        <h2 class="name">上证指数</h2>
+
+
+                        <div id="main" style="width: 500px;height: 500px;margin: 0 auto;">
+
+                        </div>
+
+
+
+                    </div>
+                </div>
+                <div class="col-lg-6 col-md-6 col-sm-6 col-12">
+                    <div class="single-pricing">
+
+                        <h2 class="name">深证成指</h2>
+
+
+                        <div id="main1" style="width: 500px;height: 500px;margin: 0 auto;">
+
+                        </div>
+
+
+
+                    </div>
+                </div>
+                <div class="col-lg-6 col-md-6 col-sm-6 col-12">
+                    <div class="single-pricing">
+
+                        <h2 class="name">创业板</h2>
+                        <div id="main2" style="width: 500px;height: 500px;margin: 0 auto;">
+
+                        </div>
+
+
+
+                    </div>
+                </div>
+                <div class="col-lg-6 col-md-6 col-sm-6 col-12">
+                    <div class="single-pricing">
+
+                        <h2 class="name">中小板</h2>
+                        <div id="main3" style="width: 500px;height: 500px;margin: 0 auto;">
+
+                        </div>
+
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+    <!-- blog-area-start -->
+    <div class="blog-area">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6 offset-lg-3 col-md-8 offset-md-2 col-sm-10 offset-sm-1 col-12">
+                    <div class="section-title">
+                        <h2 class="title">新闻快讯</h2>
+
+                    </div>
+                </div>
+            </div>
+            <div class="row justify-content-center">
+                {% for new in news%}
+                <div class="col-lg-3 col-md-6 col-sm-6 col-12">
+                    <div class="blog-small">
+                        <span class="type">News</span>
+                        <span class="date">{{ new.time }}</span>
+                        <p class="text"><a href="https://tushare.pro/news">{{ new.content }}</a></p>
+
+                        <a class="more martence-button" href="https://tushare.pro/news">Read More</a>
+                    </div>
+                </div>
+                {% endfor %}
+
+            </div>
+        </div>
+    </div>
+    <!-- blog-area-end -->
+    <!-- counter-area-start -->
+    <div class="counter-area bg-with-black">
+        <div class="container">
+            <div class="row justify-content-center">
+
+
+
+                <div class="col-lg-3 col-md-3 col-sm-4 col-12">
+                    <div class="single-counter">
+                        <div class="icon">
+                            <span class="flaticon-award"></span>
+                        </div>
+                        <div class="content">
+                            <h2 class="counter counter-up" data-counterup-time="1000" data-counterup-delay="30">{{ userCount }}</h2>
+                            <p class="name">用户数</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-3 col-sm-4 col-12">
+                    <div class="single-counter">
+                        <div class="icon">
+                            <span class="flaticon-chat-1"></span>
+                        </div>
+                        <div class="content">
+                            <h2 class="counter counter-up" data-counterup-time="1000" data-counterup-delay="30">{{ postCount }}</h2>
+                            <p class="name">帖子数</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <!-- counter-area-end -->
+
+    <!-- footer-start -->
+    <footer>
+
+        <div class="footer-bottom-area">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-4 col-md-12 col-sm-12 col-16" style="margin: auto">
+                        <div class="copyright" >
+                            <p>Copyright © 2021 <a href="https://github.com/zhangchi991022/finalProject">my github</a>. All Rights Reserved.</p>
+                        </div>
+                    </div>
+
+
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- footer-end -->
+    <!-- Scripts -->
+    <script src="/static/bootstrap template/Martence/js/jquery-3.2.0.min.js"></script>
+    <script src="/static/bootstrap template/Martence/js/jquery-ui.js"></script>
+    <script src="/static/bootstrap template/Martence/js/owl.carousel.min.js"></script>
+    <script src="/static/bootstrap template/Martence/js/isotope.pkgd.min.js"></script>
+    <script src="/static/bootstrap template/Martence/js/imagesloaded.pkgd.min.js"></script>
+    <script src="/static/bootstrap template/Martence/js/jquery.counterup.min.js"></script>
+    <script src="/static/bootstrap template/Martence/js/jquery.fancybox.min.js"></script>
+    <script src="/static/bootstrap template/Martence/js/jquery.magnific-popup.min.js"></script>
+    <script src="/static/bootstrap template/Martence/js/countdown.js"></script>
+    <script src="/static/bootstrap template/Martence/js/jquery.slicknav.min.js"></script>
+    <script src="/static/bootstrap template/Martence/js/jquery.scrollUp.js"></script>
+    <script src="/static/bootstrap template/Martence/js/jquery.mixitup.min.js"></script>
+    <script src="/static/bootstrap template/Martence/js/jquery.waypoints.min.js"></script>
+    <script src="/static/bootstrap template/Martence/js/parallax.js"></script>
+    <script src="/static/bootstrap template/Martence/js/popper.min.js"></script>
+    <script src="/static/bootstrap template/Martence/js/bootstrap.min.js"></script>
+    <script src="/static/bootstrap template/Martence/js/theme.js"></script>
+    <script src="/static/echarts-5.2.2/dist/echarts.js"></script>
+    <script src="/static/common.js"></script>
+    <script src="/static/index_charts/SH_chart.js"></script>
+    <script src="/static/index_charts/SZ_399001.js"></script>
+    <script src="/static/index_charts/SZ_399006.js"></script>
+    <script src="/static/index_charts/SZ_399005.js"></script>
+    <script>
+
+
+
+        $.ajax({
+            url: common_ops.buildUrl("/StockStar/api/get_index_api"),
+            type: "GET",
+            async:false,
+            dataType: "json",
+            success: function (res) {
+
+                let temp;
+                if (res.code === 200) {
+                    if(res.data){
+
+                        var temp1=[];
+                        var temp2=[];
+                        var temp3=[];
+                        var temp4=[];
+
+                        for(var i=0;i<res.data.length;i++){
+                            if (res.data[i]['code']==='000001.SH'){
+                                temp = [];
+                                temp.push(res.data[i]['time'].toString(),parseFloat(res.data[i]['open']),parseFloat(res.data[i]['close']),parseFloat(res.data[i]['lowest']),parseFloat(res.data[i]['highest']));
+                                temp1.unshift(temp);
+                            }
+                            if (res.data[i]['code']==='399001.SZ'){
+                                temp = [];
+                                temp.push(res.data[i]['time'].toString(),parseFloat(res.data[i]['open']),parseFloat(res.data[i]['close']),parseFloat(res.data[i]['lowest']),parseFloat(res.data[i]['highest']));
+                                temp2.unshift(temp);
+                            }
+                            if (res.data[i]['code']==='399006.SZ'){
+                                temp = [];
+                                temp.push(res.data[i]['time'].toString(),parseFloat(res.data[i]['open']),parseFloat(res.data[i]['close']),parseFloat(res.data[i]['lowest']),parseFloat(res.data[i]['highest']));
+                                temp3.unshift(temp);
+                            }
+                            if (res.data[i]['code']==='399005.SZ'){
+                                temp = [];
+                                temp.push(res.data[i]['time'].toString(),parseFloat(res.data[i]['open']),parseFloat(res.data[i]['close']),parseFloat(res.data[i]['lowest']),parseFloat(res.data[i]['highest']));
+                                temp4.unshift(temp);
+                            }
+
+                        }
+                        data_list1=temp1;
+                        data_list2=temp2;
+                        data_list3=temp3;
+                        data_list4=temp4;
+
+                    }
+                }
+
+
+            }
+
+        });
+
+        Sh_chart();
+        Sz_399001_chart();
+        Sz_399006_chart();
+        Sz_399005_chart();
+
+
+
+
+
+
+
+
+
+
+        //setInterval(get_index_api,5000);
+
+
+
+    </script>
+</body>
+
+</html>

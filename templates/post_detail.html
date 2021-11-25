@@ -1,0 +1,241 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!--- Basic Page Needs  -->
+    <meta charset="utf-8">
+    <title>StockStar</title>
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <meta name="keywords" content="">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- Mobile Specific Meta  -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <!-- CSS -->
+    <link rel="stylesheet" href="/static/bootstrap template/Martence/css/bootstrap.min.css">
+
+    <link rel="stylesheet" href="/static/bootstrap template/Martence/css/jquery-ui.css">
+    <link rel="stylesheet" href="/static/bootstrap template/Martence/css/fontawesome-all.min.css">
+    <link rel="stylesheet" href="/static/bootstrap template/Martence/css/flaticon.css">
+    <link rel="stylesheet" href="/static/bootstrap template/Martence/css/owl.carousel.min.css">
+    <link rel="stylesheet" href="/static/bootstrap template/Martence/css/animate.css">
+    <link rel="stylesheet" href="/static/bootstrap template/Martence/css/jquery.fancybox.min.css">
+    <link rel="stylesheet" href="/static/bootstrap template/Martence/css/magnific-popup.css">
+    <link rel="stylesheet" href="/static/bootstrap template/Martence/css/slicknav.min.css">
+    <link rel="stylesheet" href="/static/bootstrap template/Martence/css/style.css">
+    <link rel="stylesheet" href="/static/bootstrap template/Martence/css/responsive.css">
+
+    <!-- Favicon -->
+    <link rel="shortcut icon" type="image/png" href="/static/bootstrap template/Martence/img/favicon.ico">
+
+</head>
+
+<body>
+
+
+<div id="preloader"></div>
+<!-- header-start -->
+<header>
+
+    <div class="header-bottom-area">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-2 col-md-4 col-sm-8 col-8">
+                    <div class="logo row">
+                        <a href="/StockStar/index"><img src="/static/bootstrap template/Martence/img/home1/logo.png"  alt=""></a>
+                        <a href="/StockStar/index" style="font-size: 26px;color: white;font-family: 'Century Gothic',sans-serif">StockStar</a>
+                    </div>
+                </div>
+                <div class="col-lg-7 col-md-8 col-sm-12 col-12">
+                    <div class="responsive-menu d-lg-none"></div>
+                    <div class="menu d-none d-lg-block">
+                        <nav>
+                            <ul id="menu">
+
+                                <li><a href="04_about.html">关于我们</a></li>
+
+                                <li><a href="/StockStar/index">服务</a><span class="icon"><i class="fas fa-angle-down"></i></span>
+                                    <ul class="drop">
+                                        <li><a href="/StockStar/index">宏观监控</a></li>
+                                        <li><a href="08_three-column-grid.html">自定义监控</a></li>
+
+                                    </ul>
+                                </li>
+                                <li><a href="/StockStar/forum">论坛</a></li>
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-sm-12 col-12">
+                    <div class="search-quote">
+
+                        {% if current_user %}
+                            <div class="sq-quote">
+                                <a  class="link martence-button username"  href="/StockStar/index">{{current_user.login_name}}</a>
+                            </div>
+
+                            <div class="sq-quote">
+                                <a class="link martence-button active" href="/StockStar/logout">退出</a>
+                            </div>
+
+                        {% else %}
+
+                            <div class="sq-quote">
+                                <a class="link martence-button" href="/StockStar/login">Sign up / in</a>
+                            </div>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+<!-- header-end -->
+<!-- breadcumb-area-start -->
+<div class="breadcumb-area bg-with-gradient">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <div class="breadcumb-content">
+                    <h2 class="title">Blog Details</h2>
+                    <ul class="links">
+                        <li><a href="/StockStar/index">主页</a></li>
+                        <li><a >帖子详情</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- breadcumb-area-end -->
+<!-- blog-details-area-start -->
+<div class="blog-details-area">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-md-12 col-sm-12 col-12">
+                {% if data %}
+                <div class="blog-details-content">
+                    <div class="img">
+                        <img src="{{ url_for('static',filename='/files/'+data.picture_uri) }}" alt="">
+                    </div>
+                    <p class="date">{{ data.updated_time}}</p>
+                    <h2 class="title">{{ data.title }}</h2>
+                    <ul class="meta">
+                        <a href="/StockStar/personal_page/{{ data.blogger }}">
+                            <li ><span><i class="fas fa-user"></i></span> {{ data.blogger }}</li>
+                        </a>
+
+                        <li><span><i class="fas fa-tags"></i></span> {{ data.type}}</li>
+                    </ul>
+                    <p class="text">{{ data.content }}</p>
+
+                    <div class="share-tags">
+
+
+                    </div>
+                    <div class="leave-comment">
+                        <h2 class="name">发表您的评论~~</h2>
+
+                        <form action="/StockStar/post/detail/{{ data.id }}" method="post">
+                            <div class="row">
+
+                                <div class="col-12">
+                                    <div class="lc-input-box">
+                                        <textarea placeholder="Comment" name="comment"></textarea>
+                                    </div>
+                                </div>
+                                <div class="col-12">
+                                    <div class="lc-input-box">
+                                        <input type="submit" value="发表">
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            {% endif %}
+            <div class="col-lg-4 offset-lg-0 col-md-6 offset-md-3 col-sm-8 offset-sm-2 col-12">
+                <div class="blog-sidebar">
+
+                    <div class="bsw-post bs-widget">
+                        <h2 class="title">评论墙</h2>
+                        <ul class="post">
+                            {% for com in comment %}
+                            <li><a >
+                                <span class="content">
+                                        <span class="name">{{ com.comment_content}}</span>
+                                        <a href="/StockStar/personal_page/{{ com.comment_publisher }}">
+                                            <span ><span><i class="fas fa-user"></i></span> {{ com.comment_publisher }}</span>
+                                        </a>
+
+
+                                        <span class="date"><span><i class="far fa-calendar-alt"></i></span> {{ com.created_time}}</span>
+                                    </span>
+                            </a></li>
+                            {% endfor %}
+
+                        </ul>
+                    </div>
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- blog-details-area-end -->
+
+
+
+
+
+
+
+
+
+<!-- footer-start -->
+<footer>
+
+    <div class="footer-bottom-area">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 col-md-12 col-sm-12 col-16" style="margin: auto">
+                    <div class="copyright" >
+                        <p>Copyright © 2021 <a href="https://github.com/zhangchi991022/finalProject">my github</a>. All Rights Reserved.</p>
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+</footer>
+<!-- footer-end -->
+<!-- Scripts -->
+<script src="/static/bootstrap template/Martence/js/jquery-3.2.0.min.js"></script>
+<script src="/static/bootstrap template/Martence/js/jquery-ui.js"></script>
+<script src="/static/bootstrap template/Martence/js/owl.carousel.min.js"></script>
+<script src="/static/bootstrap template/Martence/js/isotope.pkgd.min.js"></script>
+<script src="/static/bootstrap template/Martence/js/imagesloaded.pkgd.min.js"></script>
+<script src="/static/bootstrap template/Martence/js/jquery.counterup.min.js"></script>
+<script src="/static/bootstrap template/Martence/js/jquery.fancybox.min.js"></script>
+<script src="/static/bootstrap template/Martence/js/jquery.magnific-popup.min.js"></script>
+<script src="/static/bootstrap template/Martence/js/countdown.js"></script>
+<script src="/static/bootstrap template/Martence/js/jquery.slicknav.min.js"></script>
+<script src="/static/bootstrap template/Martence/js/jquery.scrollUp.js"></script>
+<script src="/static/bootstrap template/Martence/js/jquery.mixitup.min.js"></script>
+<script src="/static/bootstrap template/Martence/js/jquery.waypoints.min.js"></script>
+<script src="/static/bootstrap template/Martence/js/parallax.js"></script>
+<script src="/static/bootstrap template/Martence/js/popper.min.js"></script>
+<script src="/static/bootstrap template/Martence/js/bootstrap.min.js"></script>
+<script src="/static/bootstrap template/Martence/js/theme.js"></script>
+
+<script src="/static/plugins/layer/layer.js"></script>
+<script src="/static/common.js"></script>
+<script src="/static/forum/submit.js"></script>
+
+</body>
+
+</html>

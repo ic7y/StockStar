@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="utf-8">
+    <title>登录</title>
+    <link rel="stylesheet" href="/static/login_form/css/normalize.min.css">
+    <link rel="stylesheet" href="/static/login_form/css/style.css">
+</head>
+
+<body>
+    <div id="formContainer" class="dwo">
+
+        <div class="formRight">
+
+            <!-- Login form -->
+            <form id="login" class="login_wrap" onsubmit="return false;">
+                <header>
+                    <h1>Welcome!</h1>
+
+                </header>
+                <section>
+                    <label>
+                        <p>用户名</p>
+                        <input type="text" placeholder=" " name="login_name">
+                        <div class="border"></div>
+                    </label>
+                    <label>
+                        <p>密码</p>
+                        <input type="password" placeholder=" " name="login_pwd">
+                        <div class="border"></div>
+                    </label>
+                    <button type="submit" class="do-login" >登 录</button>
+                </section>
+                <footer>
+                    <button type="button" class="registerBtn" onclick="window.location.href='/StockStar/register'" >新用户？</button>
+                </footer>
+            </form>
+        </div>
+    </div>
+
+
+    <script src="/static/bootstrap template/Martence/js/jquery-3.2.0.min.js"></script>
+    <script src="/static/plugins/layer/layer.js"></script>
+    <script src="/static/common.js"></script>
+    <script src="/static/login_form/js/login.js"></script>
+</body>
+
+</html>

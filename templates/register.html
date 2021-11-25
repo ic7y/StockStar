@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="utf-8">
+    <title>注册</title>
+    <link rel="stylesheet" href="/static/login_form/css/normalize.min.css">
+    <link rel="stylesheet" href="/static/login_form/css/style.css">
+</head>
+
+<body>
+<div id="formContainer" class="dwo">
+
+    <div class="formRight">
+
+
+        <!-- Register form -->
+        <form id="register" class="reg_wrap" onsubmit="return false;">
+            <header>
+                <h1>Register</h1>
+
+            </header>
+            <section>
+                <label>
+                    <p>用户名</p>
+                    <input type="text" placeholder=" " name="login_name">
+                    <div class="border"></div>
+                </label>
+
+                <label>
+                    <p>密码</p>
+                    <input type="password" placeholder=" " name="login_pwd">
+                    <div class="border"></div>
+                </label>
+                <label>
+                    <p>重复密码</p>
+                    <input type="password" placeholder=" " name="login_pwd2">
+                    <div class="border"></div>
+                </label>
+                <button type="submit" class="do-reg">注 册</button>
+            </section>
+            <footer>
+
+                <button type="button" class="registerBtn" onclick="window.location.href='/StockStar/login'" >返回</button>
+
+            </footer>
+        </form>
+    </div>
+</div>
+
+<script src="/static/bootstrap template/Martence/js/jquery-3.2.0.min.js"></script>
+<script src="/static/plugins/layer/layer.js"></script>
+<script src="/static/common.js"></script>
+<script src="/static/login_form/js/register.js"></script>
+</body>
+
+</html>
