@@ -8,7 +8,7 @@
 
 框架：Flask 2.x+JQuery+Bootstrap
 
-数据库：MySQL（目前用于用户管理）、DophinDB（之后用于实时数据存储）
+数据库：MySQL
 
 ## 二、运行前准备
 
