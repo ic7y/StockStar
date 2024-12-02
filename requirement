@@ -1,3 +1,6 @@
+Flask-APScheduler
+tushare 
+pymysql
 flask
 flask-sqlalchemy
 mysqlclient

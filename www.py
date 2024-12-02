@@ -9,6 +9,7 @@ from controllers.post_detail import *
 from controllers.personal_page import *
 from controllers.get_index_api import *
 
+from controllers.task import *
 
 from flask_debugtoolbar import DebugToolbarExtension
 
@@ -31,4 +32,5 @@ app.register_blueprint(detail_page)
 app.register_blueprint(personal_page)
 app.register_blueprint(get_index_api_page)
 
+app.register_blueprint(task_page)
 

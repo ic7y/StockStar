@@ -14,7 +14,7 @@ def register():
         return render_template("register.html")
     if request.method == "POST":
         req = request.values
-        login_name = req['login_name'] if "login_name" in req else ""
+        login_name = req['login_name'].encode("utf8") if "login_name" in req else ""
         login_pwd = req['login_pwd'] if "login_pwd" in req else ""
         login_pwd2 = req['login_pwd2'] if "login_pwd2" in req else ""
 

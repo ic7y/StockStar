@@ -18,7 +18,7 @@ scheduler.start()
 
 manager = Manager(app)
 # 添加服务器启动命令
-manager.add_command("runserver", Server("127.0.0.1", use_debugger=True, use_reloader=False))
+manager.add_command("runserver", Server("0.0.0.0", use_debugger=True, use_reloader=False))
 
 
 # 添加数据表创建命令

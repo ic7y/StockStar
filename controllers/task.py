@@ -1,3 +1,4 @@
+
 from app import db
 from common.libs.DateHelper import getOneHourAgo, getCurrentTime, get_now, get_OneDayAgo, get_ThreeMonthsAgo
 
@@ -5,9 +6,20 @@ from common.models import news, stock_index
 import tushare as ts
 
 
+from flask import Blueprint, render_template, request, make_response
+from app import *
+from common.libs.Helper import *
+from common.models.user import *
+from common.libs.UserService import *
+
+task_page = Blueprint("task", __name__, url_prefix="/StockStar")
+
+
+
+
 # 获取新闻快讯
 def getNews():
-    pro = ts.pro_api('ecbdabe501310ab88ec39a98934b767ad04f9954cf1049c73a1acacd')
+    pro = ts.pro_api('509a29c50e178f61e7af4fb7428c6b68c82abf097ba7b3a5228a94cb')
 
     res = pro.news(src='sina', start_date=getOneHourAgo(), end_date=getCurrentTime())
     news.News.query.delete()
@@ -20,7 +32,7 @@ def getNews():
 
 # 获取股市指数
 def getIndex():
-    pro = ts.pro_api('ecbdabe501310ab88ec39a98934b767ad04f9954cf1049c73a1acacd')
+    pro = ts.pro_api('509a29c50e178f61e7af4fb7428c6b68c82abf097ba7b3a5228a94cb')
     # 上证指数
     res1 = pro.index_daily(ts_code='000001.SH', start_date=get_ThreeMonthsAgo(), end_date=get_now())
     # 深圳成指
@@ -76,3 +88,10 @@ def getIndex():
 
 
 
+@task_page.route("/task", methods=["GET", "POST"])
+def task():
+    print("start get news.")
+    getNews()
+    print("start get stock.")
+    getIndex()
+    print("finish to get news and stock.")
